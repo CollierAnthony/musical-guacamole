@@ -1,22 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const quizService = require('./quiz.service');
+const leaderboardService = require('./leaderboard.service');
 
 router
     .get('/', (req, res, next) => {
-        quizService.getQuizList()
+        leaderboardService.getLeaderboard()
             .then(categories => categories ? res.json(categories) : res.status(400).json({message: 'Erreur'}))
             .catch(err => next(err));
     })
-    .get('/:name', (req, res, next) => {
-        const quizName = req.params.name;
-        quizService.getQuestions(quizName)
-            .then(questions => questions ? res.json(questions) : res.status(400).json({message: 'Aucun quiz ne correspond à cet id'}))
-            .catch(err => next(err));
-    })
     .post('/', (req, res, next) => {
-        quizService.addQuiz(req.body)
+        leaderboardService.addScore(req.body)
             .then(ok => ok ? res.json({message: 'ok'}) : res.status(400).json({message: 'Quelque chose s\'est mal passé'}))
             .catch(err => next(err));
     });

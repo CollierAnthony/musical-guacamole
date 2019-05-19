@@ -8,7 +8,8 @@ router
     .use(bodyParser.urlencoded({
         extended: true
     }))
-    .use('/categories', require('./quiz/quiz.controller'))
+    .use('/quiz', require('./quiz/quiz.controller'))
+    .use('/leaderboard', require('./leaderboard/leaderboard.controller'))
     .use((req, res) => {
         res.status(400);
         res.json({
