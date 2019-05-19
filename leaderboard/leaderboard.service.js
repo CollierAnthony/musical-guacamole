@@ -38,6 +38,15 @@ async function getLeaderboard() {
 }
 
 async function addScore(data) {
-    scores.push(data);
+    let find = false;
+    scores.map(function (score, i) {
+            if (score.username === data.username) {
+                find = true;
+                scores[i].score += data.score;
+                return {ok: true};
+            }
+        }
+    );
+    if (!find) scores.push(data);
     return {ok: true};
 }
