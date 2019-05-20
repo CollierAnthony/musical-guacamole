@@ -5,28 +5,12 @@ module.exports = {
 
 let scores = [
     {
-        username: 'GillouLeBoss',
-        score: 98765,
+        username: 'LéoNicaisse',
+        score: 1000000000,
     },
     {
-        username: 'QueenHayenne',
-        score: 98764,
-    },
-    {
-        username: 'Dalmass0',
-        score: 1,
-    },
-    {
-        username: 'VDub',
-        score: 9587,
-    },
-    {
-        username: 'BigZim',
-        score: 26541,
-    },
-    {
-        username: 'SebTab',
-        score: 89777,
+        username: 'AnthonyCollier',
+        score: 999999999,
     },
 ];
 
