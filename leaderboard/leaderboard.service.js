@@ -43,7 +43,6 @@ async function addScore(data) {
             if (score.username === data.username) {
                 find = true;
                 scores[i].score += data.score;
-                return {ok: true};
             }
         }
     );
